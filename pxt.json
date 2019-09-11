@@ -8,7 +8,7 @@
     },
     "files": [
         "README.md",
-        "turtle.ts",
+        "turtle.ts"
     ],
     "testFiles": [
         "tests.ts"
