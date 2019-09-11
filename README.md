@@ -1,4 +1,4 @@
-# Turtle
+# Open Source Turtle Robot
 
 ![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
 
