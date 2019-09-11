@@ -1,8 +1,8 @@
-# Moto:bit
+# Turtle Robot
 
-![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
+![Picture](icon.png)
 
-The package adds support for the **moto:bit** add-on board from SparkFun.
+The package adds support for the **Open Source Turtle Robot**.
 
 TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **moto-bit**.
 
@@ -14,16 +14,6 @@ Not currently integrated into pxt.  It must be manually added.  This package is 
 
 ## Usage
 
-The package adds support for the **moto:bit** add-on board from SparkFun.
-
-* [moto:bit](https://www.sparkfun.com/products/14213)
-* [Shadow Chasis](https://www.sparkfun.com/products/13301)
-* [Hobby Gearmotor](https://www.sparkfun.com/products/13302)
-* [Wheel Pair](https://www.sparkfun.com/products/13259)
-* [RedBot Sensor - Line Follower](https://www.sparkfun.com/products/11769)
-* [ine Follower Array](https://www.sparkfun.com/products/13582)
-* [RedBot Sensor - Mechanical Bumper](https://www.sparkfun.com/products/11999)
-* [Servo Extention Cable](https://www.sparkfun.com/products/13164)
 
 ### Micro:bit Pins Used 
 
@@ -50,7 +40,7 @@ The block takes three parameters: motor select, direction, and speed.
 * Speed is an integer value between `0` and `100`
 
 ```blocks
-motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+turtle.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
 ```
 
 ### Invert Motor Directon
@@ -65,7 +55,7 @@ but rather `Forward`.
 * Invert must be either `true` or `false`
 
 ```blocks
-motobit.invert(Motor.Left, true)
+turtle.invert(Motor.Left, true)
 ```
 
 ### Enabling Motors
@@ -76,7 +66,7 @@ must be set to **"Run Motors"**, and the enable motors command must be set to `O
 * Motor enable must be either `On` or `Off`.
 
 ```blocks
-motobit.enable(MotorPower.On)
+turtle.enable(MotorPower.On)
 ```
 
 ## Examples
@@ -90,42 +80,42 @@ radio.onDataPacketReceived( ({ receivedNumber }) =>  {
     // Drive forward
     if (receivedNumber == 128) {
         led.plot(2, 0)
-        motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
-        motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
-        motobit.enable(MotorPower.On)
+        turtle.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+        turtle.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
+        turtle.enable(MotorPower.On)
     } else {
         led.unplot(2, 0)
     }
     // Turn left
     if (receivedNumber == 64) {
         led.plot(0, 2)
-        motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
-        motobit.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
-        motobit.enable(MotorPower.On)
+        turtle.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
+        turtle.setMotorSpeed(Motor.Right, MotorDirection.Forward, 50)
+        turtle.enable(MotorPower.On)
     } else {
         led.unplot(0, 2)
     }
     // Turn right
     if (receivedNumber == 32) {
         led.plot(4, 2)
-        motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
-        motobit.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
-        motobit.enable(MotorPower.On)
+        turtle.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+        turtle.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
+        turtle.enable(MotorPower.On)
     } else {
         led.unplot(4, 2)
     }
     // Drive in reverse
     if (receivedNumber == 16) {
         led.plot(2, 4)
-        motobit.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
-        motobit.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
-        motobit.enable(MotorPower.On)
+        turtle.setMotorSpeed(Motor.Left, MotorDirection.Reverse, 50)
+        turtle.setMotorSpeed(Motor.Right, MotorDirection.Reverse, 50)
+        turtle.enable(MotorPower.On)
     } else {
         led.unplot(2, 4)
     }
     // Stop
     if (receivedNumber == 0) {
-        motobit.enable(MotorPower.Off)
+        turtle.enable(MotorPower.Off)
     }
 })
 radio.setGroup(13)
@@ -140,5 +130,5 @@ MIT
 * for PXT/microbit
 
 ```package
-motobit=github:sparkfun/pxt-moto-bit
+turtle=github:aspro648/pxt-turtle
 ```
