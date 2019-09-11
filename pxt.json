@@ -1,7 +1,7 @@
 {
-    "name": "motobit",
-    "version": "0.0.4",
-    "description": "SparkFun Moto:bit",
+    "name": "Turtle",
+    "version": "0.0.1",
+    "description": "Open Source Turtle Robot",
     "license": "MIT",
     "dependencies": {
         "core": "*"
@@ -10,10 +10,13 @@
         "README.md",
         "motobit.ts",
         "_locales/fr/motobit-jsdoc-strings.json",
-        "_locales/fr/motobit-strings.json"
+        "_locales/fr/motobit-strings.json",
+        "turtle.ts"
     ],
     "testFiles": [
         "tests.ts"
     ],
-    "public": true
+    "public": true,
+    "preferredEditor": "tsprj",
+    "installedVersion": "workspace:49ba2eaa-e9d0-43a8-f3aa-549af327e2eb"
 }

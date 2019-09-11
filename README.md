@@ -1,4 +1,4 @@
-# Moto:bit
+# Turtle
 
 ![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
 
