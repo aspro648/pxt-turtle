@@ -8,10 +8,9 @@
     },
     "files": [
         "README.md",
-        "motobit.ts",
+        "turtle.ts",
         "_locales/fr/motobit-jsdoc-strings.json",
         "_locales/fr/motobit-strings.json",
-        "turtle.ts"
     ],
     "testFiles": [
         "tests.ts"
