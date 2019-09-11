@@ -22,8 +22,8 @@ enum MotorPower {
 /**
  * Functions to operate the moto:bit
  */
-//% color=#f44242 icon="\uf1b9" block="Turtle Robot"
-namespace turtle {
+//% color=#f44242 icon="\uf1b9" block="moto:bit"
+namespace motobit {
 	/**
 	 * Sets the speed and direction of either the left motor or the right motor.
      * @param motor the motor to act on

@@ -1,8 +1,8 @@
-# Open Source Turtle Robot
+# Moto:bit
 
-![Turtle Robot](icon.png)
+![SparkFun Moto:bit](https://raw.githubusercontent.com/sparkfun/pxt-moto-bit/master/icon.png)  
 
-The package adds support for the **Open Source Turtle Robot**.
+The package adds support for the **moto:bit** add-on board from SparkFun.
 
 TODO: To use this package, go to https://pxt.microbit.org, click ``Add package`` and search for **moto-bit**.
 
@@ -14,7 +14,16 @@ Not currently integrated into pxt.  It must be manually added.  This package is 
 
 ## Usage
 
+The package adds support for the **moto:bit** add-on board from SparkFun.
 
+* [moto:bit](https://www.sparkfun.com/products/14213)
+* [Shadow Chasis](https://www.sparkfun.com/products/13301)
+* [Hobby Gearmotor](https://www.sparkfun.com/products/13302)
+* [Wheel Pair](https://www.sparkfun.com/products/13259)
+* [RedBot Sensor - Line Follower](https://www.sparkfun.com/products/11769)
+* [ine Follower Array](https://www.sparkfun.com/products/13582)
+* [RedBot Sensor - Mechanical Bumper](https://www.sparkfun.com/products/11999)
+* [Servo Extention Cable](https://www.sparkfun.com/products/13164)
 
 ### Micro:bit Pins Used 
 
