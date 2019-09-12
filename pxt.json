@@ -4,17 +4,17 @@
     "description": "Open Source Turtle Robot",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "servo": "*"
     },
     "files": [
         "README.md",
-        "turtle.ts",
-        "turtle.cpp"
+        "turtle.ts"
     ],
     "testFiles": [
         "tests.ts"
     ],
     "public": true,
     "preferredEditor": "tsprj",
-    "installedVersion": "workspace:e59349b4-379b-44f0-b8d9-ea0fb1342881"
+    "installedVersion": "workspace:21c18c54-fb4b-4d62-a0f6-4846561f7af6"
 }
