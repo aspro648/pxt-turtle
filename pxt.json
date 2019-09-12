@@ -9,10 +9,12 @@
     "files": [
         "README.md",
         "turtle.ts",
-		"turtle.cpp"
+        "turtle.cpp"
     ],
     "testFiles": [
         "tests.ts"
     ],
-    "public": true
+    "public": true,
+    "preferredEditor": "tsprj",
+    "installedVersion": "workspace:e59349b4-379b-44f0-b8d9-ea0fb1342881"
 }
