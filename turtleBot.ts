@@ -59,12 +59,6 @@ namespace turtleBot {
     export function forward(distance: number) {
         // 25 * 512 / (52 * 3.1412)
         steps = Math.round(distance * steps_rev / (wheel_dia * Math.PI))
-        serial.writeValue("distance", distance)
-        serial.writeValue("forward steps", steps)
-        serial.writeValue("steps_rev", steps_rev)
-        serial.writeValue("wheel_dia", wheel_dia)
-        serial.writeValue("Math.PI", Math.PI)
-        serial.writeValue("calc", distance * steps_rev / (wheel_dia * Math.PI))
         for (let i = 0; i < steps; i++) {
             pattern = [1, 0, 1, 0]
             pins.digitalWritePin(DigitalPin.P0, pattern[3])
@@ -229,5 +223,56 @@ namespace turtleBot {
             basic.pause(2)
         }
     }
-
+    /**
+     *  Turn turtle to the left.
+     */
+    //% block="left %distance (degree)" blockId="turtle_left"
+    //% degrees.min=0 degrees.max=360 degrees.defl=90 group='Control'
+    export function left(degrees: number) {
+        rotation = degrees / 360.0
+        distance = wheel_base * Math.PI * rotation
+        steps = Math.round(distance * steps_rev / (wheel_dia * Math.PI))
+        for (let i = 0; i < steps; i++) {
+            pattern = [1, 0, 0, 1]
+            pins.digitalWritePin(DigitalPin.P0, pattern[0])
+            pins.digitalWritePin(DigitalPin.P7, pattern[1])
+            pins.digitalWritePin(DigitalPin.P1, pattern[2])
+            pins.digitalWritePin(DigitalPin.P6, pattern[3])
+            pins.digitalWritePin(DigitalPin.P9, pattern[3])
+            pins.digitalWritePin(DigitalPin.P13, pattern[2])
+            pins.digitalWritePin(DigitalPin.P10, pattern[1])
+            pins.digitalWritePin(DigitalPin.P8, pattern[0])
+            basic.pause(2)
+            pattern = [0, 1, 0, 1]
+            pins.digitalWritePin(DigitalPin.P0, pattern[0])
+            pins.digitalWritePin(DigitalPin.P7, pattern[1])
+            pins.digitalWritePin(DigitalPin.P1, pattern[2])
+            pins.digitalWritePin(DigitalPin.P6, pattern[3])
+            pins.digitalWritePin(DigitalPin.P9, pattern[3])
+            pins.digitalWritePin(DigitalPin.P13, pattern[2])
+            pins.digitalWritePin(DigitalPin.P10, pattern[1])
+            pins.digitalWritePin(DigitalPin.P8, pattern[0])
+            basic.pause(2)
+            pattern = [0, 1, 1, 0]
+            pins.digitalWritePin(DigitalPin.P0, pattern[0])
+            pins.digitalWritePin(DigitalPin.P7, pattern[1])
+            pins.digitalWritePin(DigitalPin.P1, pattern[2])
+            pins.digitalWritePin(DigitalPin.P6, pattern[3])
+            pins.digitalWritePin(DigitalPin.P9, pattern[3])
+            pins.digitalWritePin(DigitalPin.P13, pattern[2])
+            pins.digitalWritePin(DigitalPin.P10, pattern[1])
+            pins.digitalWritePin(DigitalPin.P8, pattern[0])
+            basic.pause(2)
+            pattern = [1, 0, 1, 0]
+            pins.digitalWritePin(DigitalPin.P0, pattern[0])
+            pins.digitalWritePin(DigitalPin.P7, pattern[1])
+            pins.digitalWritePin(DigitalPin.P1, pattern[2])
+            pins.digitalWritePin(DigitalPin.P6, pattern[3])
+            pins.digitalWritePin(DigitalPin.P9, pattern[3])
+            pins.digitalWritePin(DigitalPin.P13, pattern[2])
+            pins.digitalWritePin(DigitalPin.P10, pattern[1])
+            pins.digitalWritePin(DigitalPin.P8, pattern[0])
+            basic.pause(2)
+        }
+    }
 } 
