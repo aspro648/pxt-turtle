@@ -1,7 +1,7 @@
 /**
  * Functions to operate the turtle
  */
-//% color=#0b9630 icon="\f188" block="Turtle" groups=['Calibration', 'Control', 'Other']
+//% color=#0b9630 icon="\f188" block="Turtle" groups=['Control', 'Calibration', 'Other']
 namespace turtleBot {
     let patterns = [[1, 0, 1, 0], [0, 1, 1, 0], [0, 1, 0, 1], [1, 0, 0, 1]]
     let pattern: number[] = []
@@ -30,14 +30,6 @@ namespace turtleBot {
     pins.digitalWritePin(DigitalPin.P4, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
 
-    //% block="wheel_diameter%wheel_dia(mm)|wheel_base%wheelbase(mm)|PEN_UP%PEN_UP|PEN_DOWN%PEN_DOWN"
-    //% wb.defl=75 wd.defl=52 pu.defl=90 pd.defl=10 blockId="turtle_calibration" group='Calibration'
-    export function set_calibration(wd: number, wb: number, pu: number, pd: number) {
-        wheel_dia = wd
-        wheel_base = wb
-        PEN_UP = pu
-        PEN_DOWN = pd
-    }
 
     //% block="pen_up"
     //% group='Control'
@@ -274,5 +266,14 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
             basic.pause(2)
         }
+    }
+
+    //% block="wheel_diameter%wheel_dia(mm)|wheel_base%wheelbase(mm)|PEN_UP%PEN_UP|PEN_DOWN%PEN_DOWN"
+    //% wb.defl=75 wd.defl=52 pu.defl=90 pd.defl=10 blockId="turtle_calibration" group='Calibration'
+    export function set_calibration(wd: number, wb: number, pu: number, pd: number) {
+        wheel_dia = wd
+        wheel_base = wb
+        PEN_UP = pu
+        PEN_DOWN = pd
     }
 } 
