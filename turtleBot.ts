@@ -299,14 +299,16 @@ namespace turtleBot {
 
 
     /**
-     *  Print turtle x,y position to serial console.
+     *  Print turtle x,y position to serial console,
+     *  and return array [x, y].
      */
     //% block="position()" blockId="position"
     //% group='Control'
-    export function position() {
+    export function position(): number[] {
         serial.writeValue("heading=", heading)
         serial.writeValue("x=", x)
         serial.writeValue("y=", y)
+        return [x, y]
     }
 
 
@@ -334,7 +336,7 @@ namespace turtleBot {
             left(relBearing)
             forward(dist)
         }
-        else if (relBearing <= 180){
+        else if (relBearing <= 180) {
             serial.writeValue("2 right", 180 - relBearing)
             serial.writeValue("backward", dist)
             right(180 - relBearing)
@@ -346,7 +348,7 @@ namespace turtleBot {
             left(relBearing - 180)
             backward(dist)
         }
-        else{
+        else {
             serial.writeValue("4 right", 360 - relBearing)
             serial.writeValue("forward", dist)
             right(360 - relBearing)
