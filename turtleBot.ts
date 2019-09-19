@@ -16,7 +16,8 @@ namespace turtleBot {
     let steps_rev = 512 //  512 for 64x gearbox, 128 for 16x gearbox
     let x = 0
     let y = 0
-    let _heading = 0  // starts to the right (east) (same as Python)
+    let _heading = 0    // starts to the right (east) (same as Python)
+    let delay_time = 2  // (ms) delay between stepper moves
     let debug = true
 
     led.enable(false)
@@ -53,7 +54,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 1, 0]
             pins.digitalWritePin(DigitalPin.P0, pattern[3])
             pins.digitalWritePin(DigitalPin.P7, pattern[2])
@@ -63,7 +64,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[3])
             pins.digitalWritePin(DigitalPin.P7, pattern[2])
@@ -73,7 +74,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [1, 0, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[3])
             pins.digitalWritePin(DigitalPin.P7, pattern[2])
@@ -83,7 +84,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
         }
         pattern = [0, 0, 0, 0]
         pins.digitalWritePin(DigitalPin.P0, pattern[0])
@@ -118,7 +119,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[1])
             pins.digitalWritePin(DigitalPin.P10, pattern[2])
             pins.digitalWritePin(DigitalPin.P8, pattern[3])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 1, 0]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -128,7 +129,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[1])
             pins.digitalWritePin(DigitalPin.P10, pattern[2])
             pins.digitalWritePin(DigitalPin.P8, pattern[3])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -138,7 +139,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[1])
             pins.digitalWritePin(DigitalPin.P10, pattern[2])
             pins.digitalWritePin(DigitalPin.P8, pattern[3])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [1, 0, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -148,7 +149,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[1])
             pins.digitalWritePin(DigitalPin.P10, pattern[2])
             pins.digitalWritePin(DigitalPin.P8, pattern[3])
-            basic.pause(2)
+            basic.pause(delay_time)
         }
         pins.digitalWritePin(DigitalPin.P0, 0)
         pins.digitalWritePin(DigitalPin.P7, 0)
@@ -183,7 +184,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 1, 0]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -193,7 +194,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -203,7 +204,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [1, 0, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -213,7 +214,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
         }
         _heading = _heading - degrees
         while (_heading < 0) {
@@ -242,7 +243,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 0, 1]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -252,7 +253,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [0, 1, 1, 0]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -262,7 +263,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
             pattern = [1, 0, 1, 0]
             pins.digitalWritePin(DigitalPin.P0, pattern[0])
             pins.digitalWritePin(DigitalPin.P7, pattern[1])
@@ -272,7 +273,7 @@ namespace turtleBot {
             pins.digitalWritePin(DigitalPin.P13, pattern[2])
             pins.digitalWritePin(DigitalPin.P10, pattern[1])
             pins.digitalWritePin(DigitalPin.P8, pattern[0])
-            basic.pause(2)
+            basic.pause(delay_time)
         }
         _heading = _heading + degrees
         while (_heading > 360) {
@@ -374,6 +375,26 @@ namespace turtleBot {
         //serial.writeValue("angle", angle)
         let bearing = (angle + 360) % 360
         return bearing
+    }
+
+
+    /**
+     *  Get reading from Optosensor.
+     */
+    //% block="getRight()" blockId="getRight"
+    //% group='Control'
+    export function getRight(): number {
+
+
+        pins.digitalWritePin(DigitalPin.P2, 1) // turn on IR LED
+        pins.setPull(DigitalPin.P3, PinPullMode.PullUp)
+        basic.pause(10)
+        let val = pins.analogReadPin(AnalogPin.P3)
+        if (debug == true) { serial.writeString("RIGHT = [" + val + "]\n") }
+
+        pins.digitalWritePin(DigitalPin.P2, 0) // turn OFF IR LED
+        basic.pause(1000)
+        return val
     }
 
 
