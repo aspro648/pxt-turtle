@@ -34,6 +34,8 @@ namespace turtleBot {
     pins.digitalWritePin(DigitalPin.P4, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
 
+    pins.setPull(DigitalPin.P3, PinPullMode.PullUp)
+    let val = pins.digitalReadPin(DigitalPin.P3) // required to set pullups
 
     /**
      *  Distance to move the turtle forwards in millimeters.
@@ -384,16 +386,10 @@ namespace turtleBot {
     //% block="getRight()" blockId="getRight"
     //% group='Control'
     export function getRight(): number {
-
-
         pins.digitalWritePin(DigitalPin.P2, 1) // turn on IR LED
-        pins.setPull(DigitalPin.P3, PinPullMode.PullUp)
-        basic.pause(10)
-        let val = pins.analogReadPin(AnalogPin.P3)
+        val = pins.analogReadPin(AnalogPin.P3)
         if (debug == true) { serial.writeString("RIGHT = [" + val + "]\n") }
-
         pins.digitalWritePin(DigitalPin.P2, 0) // turn OFF IR LED
-        basic.pause(1000)
         return val
     }
 
